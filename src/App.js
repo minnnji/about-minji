@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import ForceChart from './ForceChart';
+import { createGlobalStyle } from 'styled-components';
+import Modal from './Modal';
 
 function App() {
+  const initialModal = {
+    title: '',
+    content: '',
+    isDisplay: false
+  };
+
+  const [modal, setModal] = useState(initialModal);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <GlobalStyle />
+      <ForceChart setModal={setModal}/>
+      <Modal
+        modal={modal}
+        initialModal={initialModal}
+        setModal={setModal}/>
     </div>
   );
 }
+
+const GlobalStyle = createGlobalStyle`
+	body {
+		padding: 0;
+    margin: 0;
+    background-color: #30303d; color: #fff;
+	}
+`;
 
 export default App;
