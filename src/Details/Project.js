@@ -41,7 +41,7 @@ const Icon = styled.span`
 
 const Skills = styled.div`
   margin: 0 20px 20px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #5B64C3;
   word-break: keep-all;
 `;

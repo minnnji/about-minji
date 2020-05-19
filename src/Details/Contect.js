@@ -5,11 +5,11 @@ const Contect = (item, link, info) => {
   return(
     <Wrapper>
       {link
-        ? <a href={link}><Img src={require(`../assets/logo_${item}.png`)} alt={item} /></a>
+        ? <a href={link} target="_blank"><Img src={require(`../assets/logo_${item}.png`)} alt={item} /></a>
           : <Img src={require(`../assets/logo_${item}.png`)} alt={item} />}
           <br/>
-      {link && <Link href={link}>{link} ></Link>}
-      {info && <div>{info}</div>}
+      {link && <Link href={link} target="_blank">{link} ❯</Link>}
+      {info && <Link>{info}</Link>}
     </Wrapper>
   );
 };
@@ -23,8 +23,8 @@ const Img = styled.img`
 `;
 
 const Link = styled.a`
-  text-decoration: none;
   color: gray;
+  font-size: 20px;
 `;
 
 export default Contect;

@@ -17,6 +17,7 @@ const List = (list) => {
 const Ul = styled.ul`
   padding: 0 20px;
   line-height: 30px;
+  font-size: 20px;
 `;
 
 export default List;
